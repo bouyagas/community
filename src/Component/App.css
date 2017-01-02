@@ -1,0 +1,50 @@
+/* Global Class */
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items:  flex-end;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: scroll;
+}
+
+#input {
+  height: 40px;
+  width: 428px;
+  font-size: 20px;
+  font-family: 'Inconsolata';
+  padding-left: 15px;
+  border: 1px solid #DDDDDD;
+}
+
+
+#submit {
+  background-color: #FFFFFF;
+  width: 228px;
+  height: 44px;
+  border: 1px solid #DDDDDD;
+}
+
+#submit:hover {
+  border: 3px solid #111111;
+}
+
+#submit:focus {
+ outline: none;
+}
+
+fieldset {
+  margin: 100px 0 100px 0;
+  width: 450px;
+  height: 400px;
+}

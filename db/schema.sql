@@ -1,0 +1,35 @@
+BEGIN;
+
+DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS culture;
+DROP TABLE IF EXISTS community;
+
+CREATE TABLE users (
+id SERIAL PRIMARY KEY,
+username VARCHAR NOT NULL,
+password TEXT NOT NULL,
+date_created TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE culture (
+ id SERIAL PRIMARY KEY,
+ symbol TEXT NOT NUll,
+ value TEXT NOT NUll,
+ costom TEXT NOT NUll,
+ tradition TEXT NOT NULL,
+ language VARCHAR NOT NUll,
+ users_id INT REFERENCES users ON DELETE CASCADE,
+ date_created TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+CREATE TABLE community (
+id SERIAL PRIMARY KEY,
+name VARCHAR NOT NULL,
+discription TEXT NOT NUll,
+location VARCHAR NOT NULL,
+users_id INT REFERENCES users ON DELETE CASCADE,
+culture_id INT REFERENCES culture ON DELETE CASCADE,
+date_created TIMESTAMP NOT NULL DEFAULT NOW()
+);
+
+COMMIT;
